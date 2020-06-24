@@ -1,0 +1,17 @@
+body{
+    background-color: grey;
+}
+
+.tit{
+    color: red;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.centrado{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+}

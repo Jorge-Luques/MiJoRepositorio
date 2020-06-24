@@ -1,0 +1,47 @@
+body{
+    background-color: skyblue;
+}
+
+.tith1{
+    background-color: royalblue;
+}
+
+h1 + h1{
+    background-color: darkcyan;
+}
+
+.divS{
+    border: 1px solid whitesmoke;
+    background-color: teal;
+}
+
+div p{
+    background-color: darkorange;
+    color: rgb(5, 146, 12);
+}
+
+.divS > p{
+    background-color: yellowgreen;
+}
+
+p.divS{
+    background-color: turquoise;
+}
+
+div ~ .divS{
+    background-color: tomato;
+}
+
+/* para el div del ejemplo */
+.otroDiv{
+    border: 2px solid blue;
+}
+
+.otroH1{
+    background-color: chocolate;
+}
+
+p.otroDiv{
+    color:green;
+    text-emphasis: 2px;
+}
