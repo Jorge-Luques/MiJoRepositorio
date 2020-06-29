@@ -1,0 +1,10 @@
+Datos de Entrada              |     Salida deseada
+                              |
+  nro1                        |                         
+                              |
+  2                           |  El numero ingresado es PAR                        
+                              |
+  34567                       |  El numero ingresado es IMPAR                       
+                              |
+  0                           |  El numero ingresado es CERO                      
+
