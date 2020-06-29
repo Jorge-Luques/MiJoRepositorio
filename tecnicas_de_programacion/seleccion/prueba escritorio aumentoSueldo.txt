@@ -1,0 +1,7 @@
+     Datos de Entrada             |     Salida deseada
+				  |
+    sueldo			  |
+20000				  | se le otroga un aumento de 10% el sueldo sera de $22000
+13500				  | se le otroga un aumento de 20% el sueldo sera de $16200
+23900				  | se le otroga un aumento de 5% el sueldo sera de $25095
+25001				  | NO se le otorga un aumento el sueldo seguira de $25001

@@ -1,0 +1,13 @@
+Datos de Entrada                  |     Salida deseada
+
+nro1      nro2      nro3          |
+                                  |
+3          6        1             | El mayor de los 3 numeros ingresados es: 6
+                                  |
+66         65       60            | El mayor de los 3 numeros ingresados es: 66
+                                  |
+33         33       34            | El mayor de los 3 numeros ingresados es: 34
+                                  |
+22         22       12            | El mayor de los 3 numeros ingresados es: 22
+                                  |
+      

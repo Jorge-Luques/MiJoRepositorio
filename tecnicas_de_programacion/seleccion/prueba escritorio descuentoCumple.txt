@@ -1,0 +1,7 @@
+Datos de Entrada                  |     Salida deseada
+                                  |
+precioUnit   cantidad  mesActual  |
+				  |
+200		5	Octubre   | El precio con descuento es de: $850
+85.98		4	octubre   | El precio con descuento es de: $292.332
+333.3		6	mayo      | No se aplica descuento, el precio es de: $1999.80
