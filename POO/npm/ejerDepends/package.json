@@ -1,0 +1,20 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "colores": "node ejColorRs.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "events": "^3.1.0",
+    "jquery": "^3.5.1",
+    "readline-sync": "^1.4.10"
+  }
+}
