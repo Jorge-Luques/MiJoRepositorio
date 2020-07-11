@@ -1,0 +1,1 @@
+Implementar sistema para inicializar el listado de palabras a partir de un archivo de texto

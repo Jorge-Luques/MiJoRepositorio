@@ -1,0 +1,15 @@
+{
+  "name": "clase0607",
+  "version": "1.0.0",
+  "description": "ejercicio en clase, se cargan palabras en un arreglo global y luego se opta por que hacer",
+  "main": "index.js",
+  "scripts": {
+    "palabras": "tsc palabrasEnArray.ts & node palabrasEnArray.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

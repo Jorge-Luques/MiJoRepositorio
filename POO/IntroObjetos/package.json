@@ -1,0 +1,13 @@
+{
+  "name": "introobjetos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tele":"tsc EjTelevisor/Televisor.ts & node EjTelevisor/Televisor.js",
+    "auto":"tsc Auto/Automovil.ts & node Auto/Automovil.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
