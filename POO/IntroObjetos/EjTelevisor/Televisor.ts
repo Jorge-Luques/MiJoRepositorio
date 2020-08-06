@@ -2,48 +2,102 @@ class Televisor {
     private estaPrendido: boolean
     private volumenActual: number
     private canalActual: number
+    private decodificador: Decodificador;
 
     constructor(canalActual: number, volumenActual: number) {
+        this.decodificador = new Decodificador();
         this.canalActual = canalActual;
         this.volumenActual = volumenActual;
         this.estaPrendido = false;
     }
-    prenderApagar(): void {
+
+    public getDecodificador():Decodificador{
+        return this.decodificador;
+    }
+    
+    public prenderApagar(): void {
         if (this.estaPrendido)
             this.estaPrendido = false
         else
             this.estaPrendido = true
     }
-    subirVolumen(): void {
+    public subirVolumen(): void {
         if (this.estaPrendido) {
+            if (this.volumenActual < 100) {
+                this.getDecodificador().subirVolumen();
+            }
+        }
+    }
+
+    public bajarVolumen(): void {
+        if (this.estaPrendido) {
+            if (this.volumenActual > 0) {
+                this.getDecodificador().bajarVolumen();
+            }
+        }
+    }
+
+    public subirCanal(): void {
+        if (this.estaPrendido) {
+            this.getDecodificador().subirCanal();
+        }
+    }
+
+    public bajarCanal(): void {
+        if (this.estaPrendido) {
+            this.getDecodificador().bajarCanal();
+        }
+    }
+
+    public elegirCanal(canal: number): void {
+        if (this.estaPrendido) {
+            this.getDecodificador().elegirCanal(canal);
+        }
+    }
+
+    public getCanal(): number{
+        return this.decodificador.getCanal();
+    }
+}
+
+class Decodificador{
+    private volumenActual: number;
+    private canalActual: number
+
+    constructor (){
+        this.volumenActual = 20;
+        this.canalActual = 44;
+    }
+
+    public subirVolumen(): void {    
             if (this.volumenActual < 100) {
                 this.volumenActual = this.volumenActual + 1;
             }
-        }
     }
-    bajarVolumen(): void {
-        if (this.estaPrendido) {
+
+    public bajarVolumen(): void {  
             if (this.volumenActual > 0) {
                 this.volumenActual = this.volumenActual - 1;
-            }
-        }
+            }   
     }
-    subirCanal(): void {
-        if (this.estaPrendido) {
-            this.canalActual = this.canalActual + 1;
-        }
+
+    public subirCanal(): void {  
+            this.canalActual = this.canalActual + 1; 
     }
-    bajarCanal(): void {
-        if (this.estaPrendido) {
-            this.canalActual = this.canalActual - 1;
-        }
+
+    public bajarCanal(): void {  
+            this.canalActual = this.canalActual - 1; 
     }
-    elegirCanal(canal: number): void {
-        if (this.estaPrendido) {
+
+    public elegirCanal(canal: number): void {  
             this.canalActual = canal;
-        }
+    }
+
+    public getCanal(): number{
+        return this.canalActual;
     }
 }
+
 
 function mirandoTele() {
     miTele.bajarVolumen();
