@@ -1,13 +1,11 @@
+import {Decodificador} from './Decodificador';
+
 class Televisor {
     private estaPrendido: boolean
-    private volumenActual: number
-    private canalActual: number
     private decodificador: Decodificador;
 
-    constructor(canalActual: number, volumenActual: number) {
+    constructor() {
         this.decodificador = new Decodificador();
-        this.canalActual = canalActual;
-        this.volumenActual = volumenActual;
         this.estaPrendido = false;
     }
 
@@ -21,19 +19,16 @@ class Televisor {
         else
             this.estaPrendido = true
     }
+
     public subirVolumen(): void {
         if (this.estaPrendido) {
-            if (this.volumenActual < 100) {
                 this.getDecodificador().subirVolumen();
-            }
         }
     }
 
     public bajarVolumen(): void {
         if (this.estaPrendido) {
-            if (this.volumenActual > 0) {
-                this.getDecodificador().bajarVolumen();
-            }
+            this.getDecodificador().bajarVolumen();
         }
     }
 
@@ -60,45 +55,6 @@ class Televisor {
     }
 }
 
-class Decodificador{
-    private volumenActual: number;
-    private canalActual: number
-
-    constructor (){
-        this.volumenActual = 20;
-        this.canalActual = 44;
-    }
-
-    public subirVolumen(): void {    
-            if (this.volumenActual < 100) {
-                this.volumenActual = this.volumenActual + 1;
-            }
-    }
-
-    public bajarVolumen(): void {  
-            if (this.volumenActual > 0) {
-                this.volumenActual = this.volumenActual - 1;
-            }   
-    }
-
-    public subirCanal(): void {  
-            this.canalActual = this.canalActual + 1; 
-    }
-
-    public bajarCanal(): void {  
-            this.canalActual = this.canalActual - 1; 
-    }
-
-    public elegirCanal(canal: number): void {  
-            this.canalActual = canal;
-    }
-
-    public getCanal(): number{
-        return this.canalActual;
-    }
-}
-
-
 function mirandoTele() {
     miTele.bajarVolumen();
     miTele.bajarVolumen();
@@ -114,7 +70,7 @@ function mirandoTele() {
     console.log(miTele);
 }
 
-let miTele = new Televisor(2, 0);
+let miTele = new Televisor();
 console.log("prendo el televisor");
 miTele.prenderApagar();
 mirandoTele();

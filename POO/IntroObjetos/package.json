@@ -12,6 +12,7 @@
   "author": "Jorge Luques",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^14.0.22"
+    "@types/node": "^14.0.22",
+    "readline-sync": "^1.4.10"
   }
 }

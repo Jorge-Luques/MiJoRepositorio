@@ -1,8 +1,9 @@
+"use strict";
+exports.__esModule = true;
+var Decodificador_1 = require("./Decodificador");
 var Televisor = /** @class */ (function () {
-    function Televisor(canalActual, volumenActual) {
-        this.decodificador = new Decodificador();
-        this.canalActual = canalActual;
-        this.volumenActual = volumenActual;
+    function Televisor() {
+        this.decodificador = new Decodificador_1.Decodificador();
         this.estaPrendido = false;
     }
     Televisor.prototype.getDecodificador = function () {
@@ -16,16 +17,12 @@ var Televisor = /** @class */ (function () {
     };
     Televisor.prototype.subirVolumen = function () {
         if (this.estaPrendido) {
-            if (this.volumenActual < 100) {
-                this.getDecodificador().subirVolumen();
-            }
+            this.getDecodificador().subirVolumen();
         }
     };
     Televisor.prototype.bajarVolumen = function () {
         if (this.estaPrendido) {
-            if (this.volumenActual > 0) {
-                this.getDecodificador().bajarVolumen();
-            }
+            this.getDecodificador().bajarVolumen();
         }
     };
     Televisor.prototype.subirCanal = function () {
@@ -48,35 +45,6 @@ var Televisor = /** @class */ (function () {
     };
     return Televisor;
 }());
-var Decodificador = /** @class */ (function () {
-    function Decodificador() {
-        this.volumenActual = 20;
-        this.canalActual = 44;
-    }
-    Decodificador.prototype.subirVolumen = function () {
-        if (this.volumenActual < 100) {
-            this.volumenActual = this.volumenActual + 1;
-        }
-    };
-    Decodificador.prototype.bajarVolumen = function () {
-        if (this.volumenActual > 0) {
-            this.volumenActual = this.volumenActual - 1;
-        }
-    };
-    Decodificador.prototype.subirCanal = function () {
-        this.canalActual = this.canalActual + 1;
-    };
-    Decodificador.prototype.bajarCanal = function () {
-        this.canalActual = this.canalActual - 1;
-    };
-    Decodificador.prototype.elegirCanal = function (canal) {
-        this.canalActual = canal;
-    };
-    Decodificador.prototype.getCanal = function () {
-        return this.canalActual;
-    };
-    return Decodificador;
-}());
 function mirandoTele() {
     miTele.bajarVolumen();
     miTele.bajarVolumen();
@@ -91,7 +59,7 @@ function mirandoTele() {
     miTele.elegirCanal(25);
     console.log(miTele);
 }
-var miTele = new Televisor(2, 0);
+var miTele = new Televisor();
 console.log("prendo el televisor");
 miTele.prenderApagar();
 mirandoTele();

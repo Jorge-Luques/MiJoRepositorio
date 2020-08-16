@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.Decodificador = void 0;
 var Decodificador = /** @class */ (function () {
     function Decodificador() {
         this.volumenActual = 20;
@@ -14,10 +17,14 @@ var Decodificador = /** @class */ (function () {
         }
     };
     Decodificador.prototype.subirCanal = function () {
-        this.canalActual = this.canalActual + 1;
+        if (this.volumenActual < 100) {
+            this.canalActual = this.canalActual + 1;
+        }
     };
     Decodificador.prototype.bajarCanal = function () {
-        this.canalActual = this.canalActual - 1;
+        if (this.volumenActual > 0) {
+            this.canalActual = this.canalActual - 1;
+        }
     };
     Decodificador.prototype.elegirCanal = function (canal) {
         this.canalActual = canal;
@@ -27,3 +34,4 @@ var Decodificador = /** @class */ (function () {
     };
     return Decodificador;
 }());
+exports.Decodificador = Decodificador;

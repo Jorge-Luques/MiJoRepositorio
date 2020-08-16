@@ -1,5 +1,0 @@
-001d,El Principito,Saint-Exupery,infantil
-029f,Simbad El Marino,Las mil y una noches,infantil
-011d,Cien años de soledad,Gabriel Garcia Marquez,ficcion
-033m,Rayuela,Gabriel Garcia Marquez,ficcion
-011c,Aladino y la lampara marvillosa,Las mil y una noches,infantil
