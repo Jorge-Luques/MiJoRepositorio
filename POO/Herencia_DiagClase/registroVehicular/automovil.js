@@ -13,23 +13,28 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Camion = void 0;
-//------------------------ Clase Camion --------------------- 
+exports.Automovil = void 0;
+//------------------------ Clase Automovil --------------------- 
 var vehiculo_1 = require("./vehiculo");
-var Camion = /** @class */ (function (_super) {
-    __extends(Camion, _super);
-    function Camion(patente, marca, dis, modelo, tara) {
-        if (tara === void 0) { tara = 1000; }
+var Automovil = /** @class */ (function (_super) {
+    __extends(Automovil, _super);
+    function Automovil(patente, marca, dis, modelo, canPtas) {
+        if (canPtas === void 0) { canPtas = 4; }
         var _this = _super.call(this, patente, marca, dis, modelo) || this;
-        _this.tara = tara;
+        _this.cantPuertas = canPtas;
         return _this;
     }
-    Camion.prototype.setTara = function (pesaje) {
-        this.tara = pesaje;
+    Automovil.prototype.esCoupe = function () {
+        return this.cantPuertas == 3;
     };
-    Camion.prototype.getTara = function () {
-        return this.tara;
+    Automovil.prototype.setCantPuertas = function (cant) {
+        if (cant >= 2 && cant <= 5) { //control de que el parametro sea acorde a la cant de puertas real de un auto
+            this.cantPuertas = cant;
+        }
     };
-    return Camion;
+    Automovil.prototype.getCantPuertas = function () {
+        return this.cantPuertas;
+    };
+    return Automovil;
 }(vehiculo_1.Vehiculo));
-exports.Camion = Camion;
+exports.Automovil = Automovil;

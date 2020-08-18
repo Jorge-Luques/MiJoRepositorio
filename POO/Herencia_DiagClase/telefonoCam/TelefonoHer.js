@@ -38,6 +38,8 @@ var Telefono = /** @class */ (function () {
         else {
             this.estaPrendido = false;
         }
+        // o tambien se puede hacer
+        // this.estaPrendido = !this.estaPrendido;
     };
     Telefono.prototype.getBateriaActual = function () {
         return this.bateriaActual;

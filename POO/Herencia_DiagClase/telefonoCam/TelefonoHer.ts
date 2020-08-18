@@ -33,6 +33,8 @@ class Telefono{
         else{
             this.estaPrendido = false;
         }
+        // o tambien se puede hacer
+        // this.estaPrendido = !this.estaPrendido;
     }
 
     public getBateriaActual():number{

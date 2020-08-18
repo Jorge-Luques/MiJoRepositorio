@@ -9,11 +9,11 @@ var camion_1 = require("./camion");
 var RegistroAutomotor = /** @class */ (function () {
     function RegistroAutomotor(id) {
         this.id = id;
-        this.registrados = [];
+        this.vhcRegistrados = [];
         this.cargarVehic();
     }
     RegistroAutomotor.prototype.cargarVehic = function () {
-        var txtVehic = fs.readFileSync("vehiculos.txt", "utf-8");
+        var txtVehic = fs.readFileSync("registroVehicular/vehiculos.txt", "utf-8");
         var datosVehic = txtVehic.split('\r\n');
         var infoVehic;
         var vhc;
@@ -35,12 +35,12 @@ var RegistroAutomotor = /** @class */ (function () {
         return this.id;
     };
     RegistroAutomotor.prototype.agregar = function (vhc) {
-        this.registrados.push(vhc);
+        this.vhcRegistrados.push(vhc);
     };
     RegistroAutomotor.prototype.buscar = function (patente) {
         var vhcReg = null;
-        for (var i = 0; this.registrados.length; i++) {
-            vhcReg = this.registrados[i];
+        for (var i = 0; this.vhcRegistrados.length; i++) {
+            vhcReg = this.vhcRegistrados[i];
             if (patente == vhcReg.getPatente()) {
                 return i;
             }
@@ -50,15 +50,15 @@ var RegistroAutomotor = /** @class */ (function () {
     RegistroAutomotor.prototype.borrar = function (patente) {
         if (this.buscar(patente) != -1) {
             var posAuto = this.buscar(patente); //lo encontro y se para en la pos donde se encuentra
-            for (var i = posAuto; i < this.registrados.length - 1; i++) {
-                this.registrados[i] = this.registrados[i + 1]; //hago corrimiento a izq
+            for (var i = posAuto; i < this.vhcRegistrados.length - 1; i++) {
+                this.vhcRegistrados[i] = this.vhcRegistrados[i + 1]; //hago corrimiento a izq
             }
-            this.registrados.pop(); //borro el ultimo, que esta duplicado
+            this.vhcRegistrados.pop(); //borro el ultimo, que esta duplicado
         }
     };
     RegistroAutomotor.prototype.actualizar = function (vhc, pos) {
-        if (pos >= 0 && pos < this.registrados.length) {
-            this.registrados[pos] = vhc;
+        if (pos >= 0 && pos < this.vhcRegistrados.length) {
+            this.vhcRegistrados[pos] = vhc;
         }
         else {
             console.log("posicion NO VALIDA para actualizar el vehiculo");

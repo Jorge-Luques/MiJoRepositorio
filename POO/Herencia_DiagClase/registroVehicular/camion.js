@@ -13,23 +13,25 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Automovil = void 0;
-//------------------------ Clase Automovil --------------------- 
+exports.Camion = void 0;
+//------------------------ Clase Camion --------------------- 
 var vehiculo_1 = require("./vehiculo");
-var Automovil = /** @class */ (function (_super) {
-    __extends(Automovil, _super);
-    function Automovil(patente, marca, dis, modelo, canPtas) {
-        if (canPtas === void 0) { canPtas = 4; }
+var Camion = /** @class */ (function (_super) {
+    __extends(Camion, _super);
+    function Camion(patente, marca, dis, modelo, tara) {
+        if (tara === void 0) { tara = 1000; }
         var _this = _super.call(this, patente, marca, dis, modelo) || this;
-        _this.cantPuertas = canPtas;
+        _this.tara = tara;
         return _this;
     }
-    Automovil.prototype.esCoupe = function () {
-        return this.cantPuertas == 3;
+    Camion.prototype.setTara = function (pesaje) {
+        if (pesaje >= 500 && pesaje <= 2500) { //control de que el parametro sea acorde a la tara real de un camion
+            this.tara = pesaje;
+        }
     };
-    Automovil.prototype.setCantPuertas = function (cant) {
-        this.cantPuertas = cant;
+    Camion.prototype.getTara = function () {
+        return this.tara;
     };
-    return Automovil;
+    return Camion;
 }(vehiculo_1.Vehiculo));
-exports.Automovil = Automovil;
+exports.Camion = Camion;

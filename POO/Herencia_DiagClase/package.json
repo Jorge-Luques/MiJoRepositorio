@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "telefono": "tsc Telefono.ts & node Telefono.js",
-    "camara": "tsc TelefonoHer.ts & node TelefonoHer.js",
-    "registro":"tsc registroVehicular.ts & node registroVehicular.js",
+    "telefono": "tsc telefonoCamRad/mainCelular.ts & node telefonoCamRad/mainCelular.js",
+    "camara": "tsc telefonoCam/TelefonoHer.ts & node telefonoCam/TelefonoHer.js",
+    "registro":"tsc registroVehicular/registroVehicular.ts & node registroVehicular/registroVehicular.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -16,7 +16,7 @@ export class RegistroAutomotor{
     }
 
     private cargarVehic():void{
-        let txtVehic:string = fs.readFileSync("vehiculos.txt","utf-8");
+        let txtVehic:string = fs.readFileSync("registroVehicular/vehiculos.txt","utf-8");
         let datosVehic:string[] = txtVehic.split('\r\n');
         let infoVehic: string[];
         let vhc: Vehiculo;
