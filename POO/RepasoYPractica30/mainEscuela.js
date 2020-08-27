@@ -1,0 +1,17 @@
+"use strict";
+exports.__esModule = true;
+var legajoEscolar_1 = require("./legajoEscolar");
+var examen_1 = require("./examen");
+var alumno_1 = require("./alumno");
+var legajo = new legajoEscolar_1["default"]("La Escuelita Adulta");
+var examen1 = new examen_1["default"]("curso 1", "02082020");
+var colegiado = new alumno_1["default"](12211, "Carlo", "Marxo", 30);
+examen1.agregarAlumno(colegiado);
+examen1.setNotaAlumno(colegiado, 7);
+var examen2 = new examen_1["default"]("curso 2", "02072020");
+examen2.agregarAlumno(colegiado);
+examen2.setNotaAlumno(colegiado, 8);
+legajo.agregar(colegiado);
+console.log("promedio de ", colegiado.getNombreCompleto(), " es de: ", colegiado.calcularPromedioGral());
+console.log("estudiante: ", colegiado);
+console.log("legajo: ", legajo);
