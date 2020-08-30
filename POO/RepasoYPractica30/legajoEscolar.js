@@ -33,10 +33,11 @@ var LegajoEscolar = /** @class */ (function () {
             console.error("NO SE ENCONTRO EL ARCHIVO...", err);
         }
     };
-    LegajoEscolar.prototype.calcularPromAlumnos = function () {
+    LegajoEscolar.prototype.calcularPromedio = function () {
         var suma = 0;
         for (var i = 0; i < this.alumnado.length; i++) {
-            suma += this.alumnado[i].calcularPromedioGral();
+            suma += this.alumnado[i].calcularPromedio();
+            console.log("suma: ", suma);
         }
         if (this.alumnado.length > 0) {
             return (suma / this.alumnado.length);

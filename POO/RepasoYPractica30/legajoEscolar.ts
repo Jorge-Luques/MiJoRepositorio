@@ -1,7 +1,8 @@
 import Alumno from "./alumno";
 import * as fs from 'fs';
+import {Promedio} from "./promedio";
 
-export default class LegajoEscolar {
+export default class LegajoEscolar implements Promedio{
     private nombreInstitucion: string;
     private alumnado: Alumno[];
 
@@ -40,10 +41,11 @@ export default class LegajoEscolar {
         }
     }
 
-    public calcularPromAlumnos(): number{
+    public calcularPromedio(): number{
         let suma:number = 0;
         for (let i=0; i < this.alumnado.length; i++){
-            suma += this.alumnado[i].calcularPromedioGral();
+            suma += this.alumnado[i].calcularPromedio();
+            // console.log("suma: ",suma);
         }
         if (this.alumnado.length > 0){
             return (suma/this.alumnado.length);

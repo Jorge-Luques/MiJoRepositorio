@@ -1,6 +1,7 @@
 import Examen from "./examen";
+import { Promedio } from "./promedio";
 
-export default class Alumno{
+export default class Alumno implements Promedio{
     private expediente: number;
     private nombre: string;
     private apellido: string;
@@ -15,7 +16,7 @@ export default class Alumno{
         this.examenes = [];
     }
 
-    public calcularPromedioGral(): number{
+    public calcularPromedio(): number{
         let suma:number = 0;
         for (let i=0; i < this.examenes.length; i++){
             suma += this.examenes[i].getNotaAlumno(this);
@@ -30,5 +31,9 @@ export default class Alumno{
 
     public getNombreCompleto(): string{
         return (this.nombre+" "+this.apellido);
+    }
+
+    public agregarExamen(prueba: Examen): void{
+        this.examenes.push(prueba);
     }
 }
