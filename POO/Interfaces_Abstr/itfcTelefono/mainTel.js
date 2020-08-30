@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var smartphone_1 = require("./smartphone");
+var miSmart = new smartphone_1.SmartPhone("007339920");
+var tuSmart = new smartphone_1.SmartPhone("030345677");
+miSmart.prender();
+tuSmart.prender();
+miSmart.llamar(tuSmart.getNumero());
+console.log(miSmart);
+console.log(tuSmart);
