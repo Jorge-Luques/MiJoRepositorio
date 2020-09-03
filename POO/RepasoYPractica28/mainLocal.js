@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var local_1 = require("./local");
+var miLocal = new local_1["default"]("maxi kiosco JUA-JUA");
+miLocal.venderItem(11132, 3);
+console.log(miLocal);
+miLocal.venderItem(13031, 15);
+miLocal.venderItem(12121, 4);
+console.log(miLocal);
+console.log("ventas = ", miLocal.calcularVentas());

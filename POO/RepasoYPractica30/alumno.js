@@ -8,7 +8,7 @@ var Alumno = /** @class */ (function () {
         this.edad = edad;
         this.examenes = [];
     }
-    Alumno.prototype.calcularPromedioGral = function () {
+    Alumno.prototype.calcularPromedio = function () {
         var suma = 0;
         for (var i = 0; i < this.examenes.length; i++) {
             suma += this.examenes[i].getNotaAlumno(this);
@@ -22,6 +22,9 @@ var Alumno = /** @class */ (function () {
     };
     Alumno.prototype.getNombreCompleto = function () {
         return (this.nombre + " " + this.apellido);
+    };
+    Alumno.prototype.agregarExamen = function (prueba) {
+        this.examenes.push(prueba);
     };
     return Alumno;
 }());
